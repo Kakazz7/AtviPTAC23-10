@@ -14,3 +14,16 @@ function Notificacao({ mensagens }) {
     </p>
   );
 }
+
+// EXERCÍCIO 2 — ROTULO DO STATUS
+const statusTraduzidos = {
+  pendente: "Pendente",
+  enviado: "Enviado",
+  entregue: "Entregue",
+  cancelado: "Cancelado"
+}
+function rotuloDoStatus(status) {
+  return statusTraduzidos[status] ?? "Status desconhecido";
+}
+
+
