@@ -59,3 +59,43 @@ function Previa({tema}) {
   )
 }
 
+// APP PRINCIPAL
+
+function App() {
+  // Estado do exercício 3
+  const [tema, setTema] = useState("claro");
+
+  // Dados para testar o exercício 1
+  const mensagens = ["Nova mensagem", "Novo aviso"];
+
+  // Função para alterar o tema
+  function mudarTema(novoTema) {
+    setTema(novoTema);
+  }
+
+  return(
+    <div style={{ padding: "20px" }}>
+      <h1>Exercícios de PTAC2</h1>
+      <hr />
+
+      <h2>Exercício 1 — Notificações</h2>
+      <Notificacao mensagens={mensagens} />
+      <hr />
+
+      <h2>Exercício 2 — Status do pedido</h2>
+      <p>{rotuloDoStatus("pendente")}</p>
+      <p>{rotuloDoStatus("enviado")}</p>
+      <p>{rotuloDoStatus("entregue")}</p>
+      <p>{rotuloDoStatus("outro")}</p>
+      <hr />
+
+      <h2>Exercício 3 — Temas</h2>
+      <BotoesDeTema
+        tema={tema}
+        mudarTema={mudarTema}
+      />
+      <Previa tema={tema} />
+    </div>
+  )
+}
+export default App;
